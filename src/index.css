@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* The root size drives every rem in the app, so the user's text-size choice scales the whole UI. */
+  html {
+    font-size: 20px;
+  }
+  html[data-text='grande'] {
+    font-size: 23px;
+  }
+  html[data-text='muy-grande'] {
+    font-size: 26px;
+  }
+  body {
+    @apply bg-crema text-tinta font-sans antialiased;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 4px solid #a8460a;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border-2 border-borde bg-white p-5 shadow-sm;
+  }
+  .btn {
+    @apply inline-flex min-h-[3.25rem] items-center justify-center gap-3 rounded-2xl px-6 py-3 text-center text-lg font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-primario text-white hover:bg-primario-oscuro active:bg-primario-oscuro;
+  }
+  .btn-secondary {
+    @apply btn border-2 border-primario bg-white text-primario hover:bg-primario-claro;
+  }
+  .btn-quiet {
+    @apply btn min-h-[2.75rem] px-4 text-base font-bold text-primario hover:bg-primario-claro;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

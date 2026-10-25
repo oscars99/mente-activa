@@ -12,6 +12,16 @@ npm test         # logic tests (levels, streaks, weekly summary, daily plan)
 npm run build    # production build in dist/ (static files, host anywhere)
 ```
 
+## Publish
+
+Live at **https://oscars99.github.io/mente-activa/** (GitHub Pages, `gh-pages` branch).
+
+```bash
+npm run deploy   # runs the tests, builds for /mente-activa/, pushes dist/ to gh-pages
+```
+
+GitHub takes a minute or two to update the site after a deploy.
+
 ## What's in Phase 1
 
 - **Onboarding:** name, age range, text size.

@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  // GitHub Pages serves the app from /mente-activa/; locally it stays at /.
+  base: process.env.BASE_PATH ?? '/',
   plugins: [
     react(),
     VitePWA({
